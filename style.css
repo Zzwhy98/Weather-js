@@ -58,7 +58,7 @@ body{
     background: #dff6ff;
     border-radius: 50%;
     font-size: 22px;
-    transition: 0.10s ease;
+    transition: 0.4s ease;
 }
 
 .search-box button:hover{

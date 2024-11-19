@@ -53,23 +53,23 @@ search.addEventListener('click', () => {
 
             switch (json.weather[0].main) {
                 case 'Clear':
-                    image.src = '404.jpg';
+                    image.src = 'clear.png';
                     break;
 
                 case 'Rain':
-                    image.src = 'racoon.jpg';
+                    image.src = 'rain.png';
                     break;
 
                 case 'Snow':
-                    image.src = '404.jpg';
+                    image.src = 'snow.png';
                     break;
 
                 case 'Clouds':
-                    image.src = 'racoon.jpg';
+                    image.src = 'cloud.png';
                     break;
 
                 case 'Haze':
-                    image.src = 'racoon.jpg';
+                    image.src = 'mist.png';
                     break;
 
                 default:
@@ -145,23 +145,23 @@ searchInput.addEventListener('keydown', (event) => {
 
             switch (json.weather[0].main) {
                 case 'Clear':
-                    image.src = '404.jpg';
+                    image.src = 'clear.png';
                     break;
 
                 case 'Rain':
-                    image.src = 'racoon.jpg';
+                    image.src = 'rain.png';
                     break;
 
                 case 'Snow':
-                    image.src = '404.jpg';
+                    image.src = 'snow.png';
                     break;
 
                 case 'Clouds':
-                    image.src = 'racoon.jpg';
+                    image.src = 'cloud.png';
                     break;
 
                 case 'Haze':
-                    image.src = 'racoon.jpg';
+                    image.src = 'mist.png';
                     break;
                 
                 default:
