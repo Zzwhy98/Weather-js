@@ -11,16 +11,18 @@ search.addEventListener('click', () => {
     const APIKey = '43066dfc1ce1d21a40bdda5a70aa121a';
     const city = document.querySelector('.search-box input').value;
 
+    // If user 'click' the search element
     if (city === '') {
         container.style.height = '105px';
         return;
     }
-    
+
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
         .then(response => response.json())
         .then(json => {
             localStorage.removeItem('.search-box input');
 
+            // If user put number
             if (/\d/.test(city)) {
                 container.style.height = '400px';
                 weatherBox.style.display = 'none';
@@ -33,6 +35,7 @@ search.addEventListener('click', () => {
             errorMessage.style.display = 'none';
             errorMessage.classList.remove('fadeIn');
 
+            // If user put invalid location
             if (json.cod === '404') {
                 container.style.height = '400px';
                 weatherBox.style.display = 'none';
@@ -45,6 +48,7 @@ search.addEventListener('click', () => {
             error404.style.display = 'none';
             error404.classList.remove('fadeIn');
 
+            //Result
             const image = document.querySelector('.weather-box img');
             const temperature = document.querySelector('.weather-box .temperature');
             const description = document.querySelector('.weather-box .description');
@@ -88,7 +92,7 @@ search.addEventListener('click', () => {
             container.style.height = '590px';
 
         });
-
+    
 
 });
 
@@ -100,7 +104,8 @@ searchInput.addEventListener('keydown', (event) => {
     const APIKey = '43066dfc1ce1d21a40bdda5a70aa121a';
 
     if (event.key === 'Enter') 
-            
+    
+    //Show current data
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
         .then(response => response.json())
         .then(json => {
@@ -108,11 +113,13 @@ searchInput.addEventListener('keydown', (event) => {
             document.getElementById('txtSearch').click();
             localStorage.removeItem('.search-box input');
 
+            // If user hit 'Enter'
             if (city === '') {
                 container.style.height = '105px';
                 return;
             }
 
+            // If user put number
             if (/\d/.test(city)) {
                 container.style.height = '400px';
                 weatherBox.style.display = 'none';
@@ -125,6 +132,7 @@ searchInput.addEventListener('keydown', (event) => {
             errorMessage.style.display = 'none';
             errorMessage.classList.remove('fadeIn');
 
+            // If user put invalid location
             if (json.cod === '404') {
                 container.style.height = '400px';
                 weatherBox.style.display = 'none';
@@ -136,7 +144,8 @@ searchInput.addEventListener('keydown', (event) => {
             
             error404.style.display = 'none';
             error404.classList.remove('fadeIn');
-
+            
+            //Result
             const image = document.querySelector('.weather-box img');
             const temperature = document.querySelector('.weather-box .temperature');
             const description = document.querySelector('.weather-box .description');
@@ -183,3 +192,26 @@ searchInput.addEventListener('keydown', (event) => {
     
 });
 
+function updateClock() {
+    const clockElement = document.getElementById('clock');
+    
+    // Get the current time
+    const now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    
+    // Format time to always show two digits
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    // Update the clock element
+    clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+// Update the clock every second
+setInterval(updateClock, 1000);
+
+// Initialize the clock immediately
+updateClock();
