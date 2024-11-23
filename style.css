@@ -76,7 +76,7 @@ body{
     }
 }
 
-.clock {
+/* .clock {
     color: white;
     font-size: 7rem;
     letter-spacing: 5px;
@@ -86,6 +86,21 @@ body{
     margin-bottom: 50px;  
     margin-top: 50px;
     background-color: #333;
+    }
+
+ */
+
+ .date {
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 5px;  
+    margin-top: 5px;
+    justify-content: center;
+    display: flex;
     }
 
 .container{
@@ -98,6 +113,7 @@ body{
     border-radius: 18px;
     font-family: 'Roboto', sans-serif;
     transition: 0.6s ease-out;
+    top: 0;
 }
 
 .search-box{
@@ -122,6 +138,7 @@ body{
     font-weight: 500;
     color: #06283D;
     text-transform: capitalize;
+    font-family: 'Roboto', sans-serif;
 }
 
 .search-box button{
@@ -247,6 +264,7 @@ body{
     scale: 0;
     opacity: 0;
     display: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 .error-message img{
@@ -258,6 +276,7 @@ body{
     font-size: 22px;
     font-weight: 500;
     margin-top: 12px;
+    font-family: 'Roboto', sans-serif;
 }
 .weather-box, .weather-details{
     scale: 0;
